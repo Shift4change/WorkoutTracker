@@ -18,6 +18,9 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 
+
+
+
 //Routes go here
 app.get("/", (req,res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
