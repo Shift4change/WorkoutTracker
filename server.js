@@ -31,27 +31,37 @@ app.get("/exercise", (req,res) => {
 });
 
 app.get("/stats",(req,res) =>{
-    res.sendFile(path.join(__dirname))
+    res.sendFile(path.join(__dirname, "public/stats.html"))
+});
+//function for workout
+app.get("/api/workouts",( req,res) => {
+    db.Workout.find({},(err,data) =>{
+        res.json(data)
+    })
 })
 
 //async addExercise function
 //add exercise
-app.post("/api/workout",(req,res) =>{
-    db.Workout.create(body)
-    .then(({ _id }) => db.Exercise.findOneAndUpdate({}, { $push: { exercise: _id } }, { new: true }))
-    .then(dbUser => {
-      res.json(dbUser);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-
-}
+app.post("/api/workouts",(req,res) =>{
+    db.Workout.create(req.body, (err, data)=>{
+        if (err) 
+        throw err;
+        res.send(data)
+    }) 
+})
 app.get("/api/workouts/range",(req, res) => {
     db.Workout.where({})
 })
 
 app.put("/app/workouts/update/:id",(req, res) =>{
+    db.Workout.findOneAndUpdate({_id: mongoose.Types.ObjectId(req.params.id)},{
+        $set:{exercise:req.body}
+    }, (err, data) =>{
+        if (err)
+        throw err;
+        res.send(data)
+    }) 
+        
     
 })
 
