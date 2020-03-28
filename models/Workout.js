@@ -4,7 +4,8 @@ const WorkoutSchema = new Schema(
     {
         day: {
             type: Date,
-            default: () => new Date()
+            default: () => new Date(),
+            required: true
         },
         exercises: [
             {
@@ -20,18 +21,10 @@ const WorkoutSchema = new Schema(
                     type: Number,
                     required: true
                 },
-                weight: {
-                    type: Number
-                },
-                reps: {
-                    type: Number
-                },
-                sets: {
-                    type: Number
-                },
-                distance:{
-                    type: Number
-                }
+                weight: Number,
+                sets: Number,
+                reps: Number,
+                distance: Number
             }
         ]
     });
