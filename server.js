@@ -32,11 +32,6 @@ app.get("/stats", (req, res) => {
 
 
 
-
-
-
-
-
  //get
  app.get("/api/workouts", function (req, res) {
     db.Workout.find({})
