@@ -11,8 +11,20 @@ This is a application that allows the user to keep track view and create daily w
 ![img](public/second.png)
 
 ## Usage 
-this app is 
-This App is running with the help of the Heroku cloud application platform.
+with this app we are usind nodeJs, MongoDb as a database and mongoose and express as a package to work with it.
+This App is running with the help of the Heroku cloud application platform and we used mLab's build in web GUI to manage the database.
+
+## Technologies used
+![img](https://img.shields.io/badge/JavaScript-used-green)
+![img](https://img.shields.io/badge/NodeJs-used-brightgreen)
+![img](https://img.shields.io/badge/Express-used-orange)
+![img](https://img.shields.io/badge/MongoDb-used-purple)
+
+## License
+
+MIT License
+
+Copyright (c) 2020 Paul Fodrovics
 
 
 
